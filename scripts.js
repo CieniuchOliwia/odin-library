@@ -28,6 +28,7 @@ function Book(inputAuthor, inputTitle, inputNumberOfPages, inputReadOrNot) {
     }
 }
 
+
 function addBookToLibrary() {
     let title = document.getElementById("title").value;
     let author = document.getElementById("author").value;
@@ -39,13 +40,15 @@ function addBookToLibrary() {
         readOrNot="not read yet"
     }
     let book = new Book(author, title, numberOfPages,readOrNot);
-    console.log(book);
     myLibrary.push(book);
-    console.log(myLibrary);
-
+    document.getElementById("title").value="";
+    document.getElementById("author").value="";
+    document.getElementById("numberOfPages").value="";
+    document.getElementById("read").checked=false;
+    document.getElementById("unead").checked=false;
 }
 
-document.getElementById("addNewBook").addEventListener("click", addBookToLibrary)
+document.getElementById("save").addEventListener("click", addBookToLibrary) 
 
 function displayAllBooks() {
     document.querySelectorAll(".book").forEach(el => el.remove());
@@ -60,6 +63,12 @@ function displayAllBooks() {
 
 document.getElementById("showBooks").addEventListener("click", displayAllBooks)
 
-//dlaczego przy addEventListenerze nie muszę podawać nawiasów przy funkcji?
-//debugowanie krok po kroku
-//dlaczego wywala polskie znaki przy wyświetlaniu
+
+document.getElementById("formForNewBook").style.visibility="hidden";
+
+document.getElementById("addNewBook").addEventListener("click", function(){
+    document.getElementById("formForNewBook").style.visibility="visible";
+}) 
+
+
+
