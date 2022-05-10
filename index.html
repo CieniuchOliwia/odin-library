@@ -9,8 +9,13 @@
 
 <body>
     <script src="scripts.js" defer></script>
-
-    <form>
+    
+    <div>
+        <button type="button" id="addNewBook">Add new book</button>
+    </div>
+    
+    
+    <form id="formForNewBook">
         <div>
             <label for="title">Book's title</label>
             <input type="text" id="title">
@@ -33,7 +38,7 @@
         <input type="radio" name="readOrNot" id="unread" value="no">
         
         <div>
-            <button type="button" id="addNewBook">Add new book</button>
+            <button type="button" id="save">Save</button>
         </div>
     </form>
     <div>
