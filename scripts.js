@@ -23,7 +23,7 @@ function Book(inputAuthor, inputTitle, inputNumberOfPages, inputReadOrNot) {
 }
 
 function bookInfofunction() {
-    return (`${this.title} by ${this.author}, ${this.numberOfPages} pages, ${checkIfBookRead(this.readOrNot)}`)
+    return (`${this.title} by ${this.author}, ${this.numberOfPages} pages`)
 }
 
 function checkIfBookRead(read) {
@@ -67,18 +67,54 @@ function displayAllBooks() {
         newDiv.textContent = myLibrary[i].bookInfo();
         let removeBookButton = document.createElement("button");
         removeBookButton.classList.add("book");
-        removeBookButton.id=myLibrary[i].title;
+        removeBookButton.id = myLibrary[i].title;
         removeBookButton.textContent = "Remove";
         newDiv.appendChild(removeBookButton);
+
+        let changeReadStatusButton = document.createElement("button");
+        changeReadStatusButton.classList.add("book");
+        changeReadStatusButton.id = myLibrary[i].title + "id";
+        function readStatusForButton() {
+            if (myLibrary[i].readOrNot) {
+                return "unread"
+            } else {
+                return "read"
+            }
+        }
+        changeReadStatusButton.textContent = `Change to ${readStatusForButton()}`;
+        newDiv.appendChild(changeReadStatusButton);
+
+
+        changeReadStatusButton.addEventListener("click", function (event) {
+            let indexForReadStaus = myLibrary.findIndex((book) => book.title + "id" == event.target.id);
+            function checkTextContentOnButton() {
+                if (event.target.textContent == "Change to unread") {
+                    return "read";
+                } else {
+                    return "unread";
+                }
+            }
+            changeReadStatusButton.textContent = `Change to ${checkTextContentOnButton()}`;
+
+            if (myLibrary[indexForReadStaus].readOrNot) {
+                myLibrary[indexForReadStaus].readOrNot = false;
+            } else {
+                myLibrary[indexForReadStaus].readOrNot = true;
+            };
+        })
+
+
+
         removeBookButton.addEventListener("click", function (event) {
-            let index=myLibrary.findIndex((book)=>book.title==event.target.id);
-            console.log(index);
-            myLibrary.splice(index,1);
+            let index = myLibrary.findIndex((book) => book.title == event.target.id);
+            myLibrary.splice(index, 1);
             newDiv.remove();
         })
 
     }
 }
+
+
 
 document.getElementById("showBooks").addEventListener("click", displayAllBooks);
 
