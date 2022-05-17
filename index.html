@@ -9,44 +9,54 @@
 
 <body>
     <script src="scripts.js" defer></script>
-    <div>
-        <button type="button" id="addNewBook">Add new book</button>
-    </div>
-    
-    
-    <form id="formForNewBook">
-        <div>
-            <label for="title">Book's title</label>
-            <input type="text" id="title">
-        </div>
-        
-        <div>
-            <label for="author">Book's author</label>
-            <input type="text" id="author">
-        </div>
-        
-        <div>
-            <label for="numberOfPages">Number of pages</label>
-            <input type="number" id="numberOfPages">
+    <div id="container">
+        <div id="placeForImage">
+            <img src="priscilla-du-preez-lcvWE__0vU8-unsplash.jpg" alt="books" height="700px" width="auto">
+            <div id="photoCreator">Photo by Priscilla Du Preez on Unsplash</div>
         </div>
 
-        <div>Have you read this book?</div>
-        <label for="read">Yes</label>
-        <input type="radio" name="readOrNot" id="read" value="yes">
-        <label for="unread">No</label>
-        <input type="radio" name="readOrNot" id="unread" value="no">
-        
-        <div>
-            <button type="button" id="save">Save</button>
+        <div id="placeForFormAndDisplay">
+            <h2 class="heading">
+               Here is your library! If you want to add new book, press the button below.
+            </h2>
+
+            <div>
+                <button type="button" id="addNewBook">Add new book</button>
+            </div>
+
+            <form id="formForNewBook">
+                <div>
+                    <label for="title">TITLE</label>
+                    <input type="text" id="title">
+                </div>
+
+                <div>
+                    <label for="author">AUTHOR</label>
+                    <input type="text" id="author">
+                </div>
+
+                <div>
+                    <label for="numberOfPages">NUMBER OF PAGES</label>
+                    <input type="number" id="numberOfPages">
+                </div>
+
+                <div>HAVE YOU READ THIS BOOK ALREADY?</div>
+                <label for="read">YES</label>
+                <input type="radio" name="readOrNot" id="read" value="yes">
+                <label for="unread">NO</label>
+                <input type="radio" name="readOrNot" id="unread" value="no">
+
+                <div>
+                    <button type="button" id="save">Save</button>
+                </div>
+            </form>
+            <div>
+                <button type="button" id="showBooks">Show all books</button>
+            </div>
+            <div id="placeForBooks">
+            </div>
         </div>
-    </form>
-    <div>
-        <button type="button" id="showBooks">Show all books</button>
     </div>
-    <div id="placeForBooks">
-
-    </div>
-
 </body>
 
 </html>
