@@ -1,0 +1,45 @@
+#container{
+    display: flex;
+}
+
+#placeForImage{
+    position: relative;
+    display:flex ;
+    justify-content: center;
+}
+
+#photoCreator{
+    position:absolute;
+    bottom:10px;
+    font-size: 12px;
+}
+
+.heading{
+    margin-top: 50px;
+    margin-left: 20px;
+    margin-right: 200px;
+    font-size: 17px;
+}
+
+*{
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+button{
+    margin-left: 20px;
+    border-radius: 5px;
+    font-size: 12px;
+    width: 150px;
+    height: 35px;
+    border:1px solid rgb(136,45,23);
+    background-color: rgb(136,45,23);
+    color:white;
+}
+
+#formForNewBook{
+    margin-left: 20px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    font-size: 10px;
+    font-weight: 700;
+}
