@@ -67,35 +67,45 @@ function displayAllBooks() {
         newDiv.textContent = myLibrary[i].bookInfo();
         let removeBookButton = document.createElement("button");
         removeBookButton.classList.add("book");
+        removeBookButton.classList.add("removeButton");
         removeBookButton.id = myLibrary[i].title;
-        removeBookButton.textContent = "Remove";
-        newDiv.appendChild(removeBookButton);
+        removeBookButton.textContent = "x";
 
         let changeReadStatusButton = document.createElement("button");
         changeReadStatusButton.classList.add("book");
+        changeReadStatusButton.classList.add("readStatusButton")
         changeReadStatusButton.id = myLibrary[i].title + "id";
         function readStatusForButton() {
             if (myLibrary[i].readOrNot) {
-                return "unread"
+                return "READ"
             } else {
-                return "read"
+                return "UNREAD"
             }
         }
-        changeReadStatusButton.textContent = `Change to ${readStatusForButton()}`;
+        changeReadStatusButton.textContent = readStatusForButton();
         newDiv.appendChild(changeReadStatusButton);
-
+        newDiv.appendChild(removeBookButton);
 
         changeReadStatusButton.addEventListener("click", function (event) {
             let indexForReadStaus = myLibrary.findIndex((book) => book.title + "id" == event.target.id);
             function checkTextContentOnButton() {
-                if (event.target.textContent == "Change to unread") {
-                    return "read";
+                if (event.target.textContent == "READ") {
+                    return "UNREAD";
                 } else {
-                    return "unread";
+                    return "READ";
                 }
             }
-            changeReadStatusButton.textContent = `Change to ${checkTextContentOnButton()}`;
 
+            if (event.target.textContent == "READ") {
+                event.target.style.backgroundColor="red";
+            } else {
+                event.target.style.backgroundColor="green";
+            };
+             
+
+            changeReadStatusButton.textContent = checkTextContentOnButton();
+        
+          
             if (myLibrary[indexForReadStaus].readOrNot) {
                 myLibrary[indexForReadStaus].readOrNot = false;
             } else {

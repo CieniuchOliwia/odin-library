@@ -38,8 +38,44 @@ button{
 
 #formForNewBook{
     margin-left: 20px;
-    padding-top: 40px;
+    padding-top: 20px;
     padding-bottom: 40px;
     font-size: 10px;
     font-weight: 700;
 }
+
+.removeButton{
+    background-color: rgb(210,4,45);
+    width: 20px;
+    height: 20px;
+
+}
+
+.label{
+    font-family: "Hubballi";
+    letter-spacing: 2px;
+    font-size: 12px;
+}
+
+.formElement{
+    margin-bottom: 10px;
+}
+
+#save{
+    margin-left: 0px;
+    margin-top: 20px;
+}
+
+.book{
+    font-family: "Hubballi";
+    margin-left: 20px;
+}
+
+input[type="radio"]:checked{
+    accent-color:rgb(136,45,23);
+}
+
+.readStatusButton{
+    font-family:Arial, Helvetica, sans-serif;
+}
+
