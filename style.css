@@ -66,10 +66,7 @@ button{
     margin-top: 20px;
 }
 
-.book{
-    font-family: "Hubballi";
-    margin-left: 20px;
-}
+
 
 input[type="radio"]:checked{
     accent-color:rgb(136,45,23);
@@ -77,5 +74,24 @@ input[type="radio"]:checked{
 
 .readStatusButton{
     font-family:Arial, Helvetica, sans-serif;
+    width: 70px;
+    height: 20px;
+    font-size: 10px;
+}
+
+.container{
+    display: flex;
+    margin-bottom: 5px;
+}
+
+.placeForText{
+    width:450px;
+    margin-left: 20px;
+    font-size: 15px;
+    font-family: Hubballi;
+}
+
+#showBooks{
+    margin-bottom: 20px;
 }
 

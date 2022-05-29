@@ -63,43 +63,55 @@ function displayAllBooks() {
     for (i = 0; i <= myLibrary.length - 1; i++) {
         let newDiv = document.createElement("div");
         newDiv.classList.add("book");
+        newDiv.classList.add("container");
         placeForBooks.appendChild(newDiv);
-        newDiv.textContent = myLibrary[i].bookInfo();
+        let divForTextContent=document.createElement("div");
+        divForTextContent.classList.add("book");
+        divForTextContent.classList.add("placeForText");
+        newDiv.appendChild(divForTextContent);
+        divForTextContent.textContent = myLibrary[i].bookInfo();
         let removeBookButton = document.createElement("button");
         removeBookButton.classList.add("book");
         removeBookButton.classList.add("removeButton");
         removeBookButton.id = myLibrary[i].title;
         removeBookButton.textContent = "x";
-
         let changeReadStatusButton = document.createElement("button");
         changeReadStatusButton.classList.add("book");
         changeReadStatusButton.classList.add("readStatusButton")
         changeReadStatusButton.id = myLibrary[i].title + "id";
         function readStatusForButton() {
             if (myLibrary[i].readOrNot) {
-                return "READ"
+                return "read"
             } else {
-                return "UNREAD"
+                return "unread"
             }
         }
         changeReadStatusButton.textContent = readStatusForButton();
+        if(changeReadStatusButton.textContent=="read"){
+            changeReadStatusButton.style.backgroundColor="RGB(97,106,65)";
+        }else{
+            changeReadStatusButton.style.backgroundColor="RGBA(136,45,23,0.2)";
+            changeReadStatusButton.style.borderColor="RGBA(136,45,23,0.2)"
+        }
         newDiv.appendChild(changeReadStatusButton);
         newDiv.appendChild(removeBookButton);
 
         changeReadStatusButton.addEventListener("click", function (event) {
             let indexForReadStaus = myLibrary.findIndex((book) => book.title + "id" == event.target.id);
             function checkTextContentOnButton() {
-                if (event.target.textContent == "READ") {
-                    return "UNREAD";
+                if (event.target.textContent == "read") {
+                    return "unread";
                 } else {
-                    return "READ";
+                    return "read";
                 }
             }
 
-            if (event.target.textContent == "READ") {
-                event.target.style.backgroundColor="red";
+            if (event.target.textContent == "read") {
+                event.target.style.backgroundColor="RGBA(136,45,23,0.2)";
+                event.target.style.borderColor="RGBA(136,45,23,0.2)"
+
             } else {
-                event.target.style.backgroundColor="green";
+                event.target.style.backgroundColor="RGB(97,106,65)";
             };
              
 
