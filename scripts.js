@@ -35,6 +35,7 @@ function checkIfBookRead(read) {
 }
 
 function addBookToLibrary() {
+    if(document.getElementById("formForNewBook").checkValidity()){
     let title = document.getElementById("title").value;
     let author = document.getElementById("author").value;
     let numberOfPages = document.getElementById("numberOfPages").value;
@@ -51,7 +52,7 @@ function addBookToLibrary() {
     document.getElementById("numberOfPages").value = "";
     document.getElementById("read").checked = false;
     document.getElementById("unread").checked = false;
-}
+    }}
 
 document.getElementById("save").addEventListener("click", addBookToLibrary);
 
