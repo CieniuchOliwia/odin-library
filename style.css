@@ -95,3 +95,17 @@ input[type="radio"]:checked{
     margin-bottom: 20px;
 }
 
+input:invalid{
+    border:1px solid rgb(210,4,45);
+}
+
+input{
+    border-radius: 3px;
+    border:1px solid black ;
+}
+
+input:focus{
+    border: 1px solid black;
+    background-color: RGBA(136,45,23,0.2);
+    outline-style: none;
+}

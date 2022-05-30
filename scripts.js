@@ -51,7 +51,7 @@ function addBookToLibrary() {
     document.getElementById("author").value = "";
     document.getElementById("numberOfPages").value = "";
     document.getElementById("read").checked = false;
-    document.getElementById("unread").checked = false;
+    document.getElementById("unread").checked = true;
     }}
 
 document.getElementById("save").addEventListener("click", addBookToLibrary);
@@ -90,9 +90,10 @@ function displayAllBooks() {
         changeReadStatusButton.textContent = readStatusForButton();
         if(changeReadStatusButton.textContent=="read"){
             changeReadStatusButton.style.backgroundColor="RGB(97,106,65)";
+            changeReadStatusButton.style.borderColor="RGB(97,106,65)";
         }else{
             changeReadStatusButton.style.backgroundColor="RGBA(136,45,23,0.2)";
-            changeReadStatusButton.style.borderColor="RGBA(136,45,23,0.2)"
+            changeReadStatusButton.style.borderColor="RGBA(136,45,23,0.2)";
         }
         newDiv.appendChild(changeReadStatusButton);
         newDiv.appendChild(removeBookButton);
@@ -109,10 +110,11 @@ function displayAllBooks() {
 
             if (event.target.textContent == "read") {
                 event.target.style.backgroundColor="RGBA(136,45,23,0.2)";
-                event.target.style.borderColor="RGBA(136,45,23,0.2)"
+                event.target.style.borderColor="RGBA(136,45,23,0.2)";
 
             } else {
                 event.target.style.backgroundColor="RGB(97,106,65)";
+                event.target.style.borderColor="RGB(97,106,65)";
             };
              
 
